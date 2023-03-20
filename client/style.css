@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Shantell Sans', cursive;
+
+}
+
+body{
+    background-color: #323437;
+}
+
+h1{
+    color: gold;
+    font-size: 3rem;
+}
+
+.panel {
+    border: 2px solid red;
+    height: 80px;
+    width: 72%;
+    margin: auto;
+    margin-top: 86px;
+}
+
+#inputBox {
+    background-color: #323437;
+    /* border: 2px solid green; */
+   
+     color :  #646669;
+    font-size: 2rem;
+    text-align: left;
+    border : none ;
+    outline: none;
+    height: 198px;
+    width: 72%;
+    margin: auto;
+    margin-top: 43px;
+   
+}
+
+#wordCount{
+    color : white;
+}
+
+.correct{
+    color : #d1d0c5 ;
+    color : rgb(50, 220, 50) ;
+}
+
+.wrong{
+    color : rgb(229, 107, 107) ;
+}
+
+
+.panel{
+    display: flex;
+    justify-content: space-around;
+}
+.panel-item {
+    font-size: 2.15rem;
+    color: #d1d0c5 ;
+
+}
+input[type="textarea"]:focus {
+    outline: none;
+    border: none;
+  }
