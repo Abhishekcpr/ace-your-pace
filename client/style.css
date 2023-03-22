@@ -10,7 +10,7 @@ body{
 
 h1{
     color: gold;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .panel {
@@ -18,16 +18,16 @@ h1{
     height: fit-content;
     width: 72%;
     margin: auto;
-    margin-top: 86px;
+    margin-top: 19px;
     padding: 13px;
 }
 
 #inputBox {
     background-color: #323437;
-    /* border: 2px solid green; */
+    
    
      color :  #646669;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: left;
     border : none ;
     outline: none;

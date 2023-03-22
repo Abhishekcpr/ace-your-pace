@@ -1,0 +1,24 @@
+{
+  "name": "typing-speed",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhishekcpr/ace-your-pace.git"
+  },
+  "author": "Abhishek-king-coder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhishekcpr/ace-your-pace/issues"
+  },
+  "homepage": "https://github.com/Abhishekcpr/ace-your-pace#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21",
+    "socket.io": "^4.6.1"
+  }
+}

@@ -1,3 +1,7 @@
+
+ const socket = io.connect()
+
+
 para = [
     "This CSS code will remove the border and outline from a textbox of type text when it is focused You can modify the selector to target a specific textbox by using an ID class or other attribute selectors Note that removing the border and outline from a focused element can make it harder for users to see which element is currently focused so use this technique with caution",
      "The Dinosaur Game is a browser game developed by Google and built into the Google Chrome web browser The player guides a pixelated Tyrannosaurus rex across a sidescrolling landscape avoiding obstacles to achieve a higher score The game was created by members of the Chrome UX team in",
@@ -9,6 +13,22 @@ para = [
 
 ]
 
+
+var username = ""
+var startGame = false ;
+
+do{
+
+    username = prompt("Enter your name : ")
+
+}while(!username)
+
+if(username)
+{
+    $('#username').html(username)
+}
+
+
 var currentText
 var lettersArray = []
 var currentIndex = 0 ;
@@ -17,12 +37,39 @@ changeIdIndex = 0 ;
 wordCount = 0
 wordComplete = true ;
 var characterArray 
-var setTime = 30
+var setTime = 60
 initialTime = setTime
 var wpm = 0
 var accuracy = 0
 var actualWords = 0
 startTimer = true ;
+
+
+ startGame = confirm("Are you ready ?") ;
+
+
+
+
+ var giveId = "GUPT" + (new Date()).getTime() ;
+ console.log(giveId);
+
+ playerData = {
+    name : username,
+    id : giveId
+ }
+
+ if(startGame)
+ {
+    socket.emit('player-ready', playerData ) ;
+}
+
+
+socket.on('player-ready',(x)=>{
+    console.log( "play");
+    $('#num').html(x + '')
+ })
+
+
 
 function setContent()
 {
@@ -44,7 +91,7 @@ function giveSpan()
     //     character =   `<span>${character}</span>`
     // });
 
-    lettersArray = []
+    lettersArray = [] 
 
     for(i = 0 ; i< characterArray.length; i++)
     {
@@ -72,7 +119,7 @@ window.addEventListener('keydown',(e)=>{
     c = c.toLowerCase();
     }
     // console.log("button pressed" +  c);
-    console.log("button pressed" +  (event.keyCode));
+    // console.log("button pressed" +  (event.keyCode));
 
 
     if(event.keyCode == 8)
@@ -109,7 +156,7 @@ window.addEventListener('keydown',(e)=>{
     else
     {
         lettersArray[currentIndex] = `<span class="wrong" >${characterArray[currentIndex]}</span>`
-        console.log(" not Matched " + characterArray[currentIndex]);
+        // console.log(" not Matched " + characterArray[currentIndex]);
         wordComplete = false ;
 
         currentIndex++ ;
@@ -129,12 +176,14 @@ window.addEventListener('keydown',(e)=>{
 })
 
 var loadTimer
+
+
 function timer()
 {
     loadTimer = setInterval(() => {
       $('#timer').html(initialTime + '')
       wpm =  Math.floor((wordCount*60)/(setTime - initialTime || 1))
-
+      
       $('#speed').html(wpm + '')
 
       accuracy = Math.floor((( wordCount)/actualWords)*100)
@@ -150,6 +199,26 @@ function timer()
 
       }
 
+
+      socket.on('update-detail', (details)=>
+      {
+        
+
+        for(i = 0 ; i< details.length; i++)
+        {
+            if(details[i].clientId == giveId)
+            {
+                $('#rank').html( i + 1+ '')   
+            }
+        }
+
+         
+      })
+
+      socket.emit('update-detail',({
+          parameter : wordCount*100 + accuracy ,
+         clientId : giveId 
+      }))
       
         
     }, 1000);
