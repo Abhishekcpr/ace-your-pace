@@ -103,6 +103,8 @@ function giveSpan()
     // console.log(lettersArray);
 }
 
+var setWidth = 0
+
 window.addEventListener('keydown',(e)=>{
   c =   String.fromCharCode(event.keyCode)
 
@@ -142,6 +144,10 @@ window.addEventListener('keydown',(e)=>{
             if(wordComplete == true)
             {
                 wordCount++ ;
+                
+            //   document.getElementById('one').style.width =` ${setWidth}%`
+                // console.log("width "  + x);
+               
 
                 $('#wordCount').text(wordCount)
             }
@@ -203,21 +209,39 @@ function timer()
       socket.on('update-detail', (details)=>
       {
         
+        // console.log(details);
 
-        for(i = 0 ; i< details.length; i++)
+        for( let i = 0 ; i< details.length; i++)
         {
             if(details[i].clientId == giveId)
             {
-                $('#rank').html( i + 1+ '')   
+                $('#rank').html( i + 1+ '')  
+               
+                // document.getElementById("A"+i+1).style.width = `${details[i].words*2}%`
             }
+           
+            if(i < 5)
+            {
+                var A = "A" + (i + 1)
+                B = details[i].words*2 + 5 + "%"
+                C = "#p" + (i + 1)
+                NAME = details[i].name
+                document.getElementById(A).style.width = B
+                $(C).html(NAME)
+
+            }
+           
+          
+           
         }
 
-         
+        
       })
 
       socket.emit('update-detail',({
           parameter : wordCount*100 + accuracy ,
-         clientId : giveId 
+         clientId : giveId ,
+         words : wordCount
       }))
       
         

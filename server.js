@@ -38,7 +38,8 @@ io.on('connection', (socket) => {
             name : playerData.name,
             clientId : playerData.id,
             serverId : socket.id,
-            parameter : 0
+            parameter : 0,
+            words : 0
 
         }) ;
 
@@ -57,6 +58,7 @@ io.on('connection', (socket) => {
                 if(info.clientId == z.clientId)
                 {
                     z.parameter = info.parameter ;
+                    z.words = info.words
                 }
              }
          
@@ -72,7 +74,7 @@ io.on('connection', (socket) => {
             }
           });
 
-            console.log(allPlayers);
+            // console.log(allPlayers);
         socket.emit('update-detail', allPlayers) ;
 
         

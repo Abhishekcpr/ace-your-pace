@@ -58,10 +58,58 @@ h1{
     flex-wrap: wrap;
 }
 .panel-item {
-    font-size: 2.15rem;
+    font-size: 1.75rem;
     color: #d1d0c5 ;
 
 }
+
+.progressBars{
+    /* border : 3px solid green ; */
+    width: 72%;
+    height: 305px;
+    padding : 5px ;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+
+}
+
+.players{
+    color : goldenrod;
+    font-size: 1.25 rem;
+}
+.bars{
+    /* border : 3px solid greenyellow ;  */
+
+    margin-top : 10px;
+    width : 5% ;
+    /* background-color: greenyellow ; */
+
+
+}
+
+#A1 {
+    background-color: rgb(143, 228, 46);
+}
+
+#A2 {
+    background-color: rgb(219, 139, 65);
+}
+
+#A3 {
+    background-color: rgb(219, 191, 65);
+}
+
+#A4 {
+    background-color: rgb(50, 216, 216);
+}
+
+#A5 {
+    background-color: rgb(152, 50, 216);
+}
+
+
 input[type="textarea"]:focus {
     outline: none;
     border: none;
