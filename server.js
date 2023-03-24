@@ -39,7 +39,8 @@ io.on('connection', (socket) => {
             clientId : playerData.id,
             serverId : socket.id,
             parameter : 0,
-            words : 0
+            words : 0,
+            speed : 0
 
         }) ;
 
@@ -59,6 +60,7 @@ io.on('connection', (socket) => {
                 {
                     z.parameter = info.parameter ;
                     z.words = info.words
+                    z.speed = info.speed
                 }
              }
          
@@ -76,8 +78,14 @@ io.on('connection', (socket) => {
 
             // console.log(allPlayers);
         socket.emit('update-detail', allPlayers) ;
+        socket.broadcast.emit('update-detail', allPlayers) ;
 
         
+
+     })
+
+     socket.on('disconnect',()=>{
+        console.log("Someone disconencted..."); 
 
      })
 

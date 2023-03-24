@@ -225,7 +225,7 @@ function timer()
                 var A = "A" + (i + 1)
                 B = details[i].words*2 + 5 + "%"
                 C = "#p" + (i + 1)
-                NAME = details[i].name
+                NAME = details[i].name + " " + details[i].speed + " wpm" ;
                 document.getElementById(A).style.width = B
                 $(C).html(NAME)
 
@@ -241,7 +241,8 @@ function timer()
       socket.emit('update-detail',({
           parameter : wordCount*100 + accuracy ,
          clientId : giveId ,
-         words : wordCount
+         words : wordCount,
+         speed : wpm
       }))
       
         
