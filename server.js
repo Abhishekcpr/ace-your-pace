@@ -91,6 +91,16 @@ io.on('connection', (socket) => {
      socket.on('disconnect',()=>{
         console.log("Someone disconencted..."); 
 
+          for(x = 0; x < allPlayers.length; x++)
+          {
+            if(allPlayers[x].serverId == socket.id)
+            {
+              console.log("Disconnected player :" + allPlayers[x]);
+               allPlayers.splice(x,1) ;
+               break ;
+            }
+          }
+
      })
 
 
