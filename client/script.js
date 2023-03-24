@@ -219,14 +219,16 @@ function timer()
                
                 // document.getElementById("A"+i+1).style.width = `${details[i].words*2}%`
             }
-           
+            
             if(i < 5)
             {
                 var A = "A" + (i + 1)
                 B = details[i].words*2 + 5 + "%"
                 C = "#p" + (i + 1)
+                colorCode = details[i].color
                 NAME = details[i].name + " " + details[i].speed + " wpm" ;
                 document.getElementById(A).style.width = B
+                document.getElementById(A).style.backgroundColor = colorCode ;
                 $(C).html(NAME)
 
             }

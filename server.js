@@ -26,6 +26,8 @@ var turn = 0
 
 var allPlayers = []
 
+colors = ["rgb(143, 228, 46)" , 'rgb(219, 139, 65)', 'rgb(219, 191, 65)', 'rgb(50, 216, 216)','rgb(152, 50, 216)','rgb(216, 100, 50)','rgb(216, 50, 64)'] ;
+var w = 0 ;
 io.on('connection', (socket) => {
    
     console.log("A user connected...");
@@ -40,7 +42,8 @@ io.on('connection', (socket) => {
             serverId : socket.id,
             parameter : 0,
             words : 0,
-            speed : 0
+            speed : 0,
+            color : colors[(w++)%colors.length]
 
         }) ;
 
@@ -61,6 +64,7 @@ io.on('connection', (socket) => {
                     z.parameter = info.parameter ;
                     z.words = info.words
                     z.speed = info.speed
+                    
                 }
              }
          
