@@ -3,11 +3,11 @@
 
 
 para = [
-    "This CSS code will remove the border and outline from a textbox of type text when it is focused You can modify the selector to target a specific textbox by using an ID class or other attribute selectors Note that removing the border and outline from a focused element can make it harder for users to see which element is currently focused so use this technique with caution",
-     "the finosaur game is a browser game developed by google and built into the google Chrome web browser the player guides a pixelated  rex across a sidescrolling landscape avoiding obstacles to achieve a higher score the game was created by members of the chrome UX team in",
-    "PacMan originally called Puck Man in Japan is a  maze action video game developed and released by Namco for arcades In North America the game was released by Midway Manufacturing as part of its licensing agreement with Namco America",
-    "In computer networking localhost is a hostname that refers to the current device used to access it It is used to access the network services that are running on the host via the loopback network interface Using the loopback interface bypasses any local network interface hardware",
-    "A pyramid is a structure whose outer surfaces are triangular and converge to a single step at the top making the shape roughly a pyramid in the geometric sense The base of a pyramid can be trilateral quadrilateral or of any polygon shape As such a pyramid has at least three outer triangular surfaces",
+    "his css code will remove the border and outline from a textbox of type text when it is focused You can modify the selector to target a specific textbox by using an id class or other attribute selectors Note that removing the border and outline from a focused element can make it harder for users to see which element is currently focused so use this technique with caution",
+     "the dinosaur game is a browser game developed by google and built into the google Chrome web browser the player guides a pixelated  rex across a sidescrolling landscape avoiding obstacles to achieve a higher score the game was created by members of the chrome ux team in",
+     "pacman originally called puck man in japan is a  maze action video game developed and released by namco for arcades in north america the game was released by midway manufacturing as part of its licensing agreement with namco america",    
+     "in computer networking localhost is a hostname that refers to the current device used to access it it is used to access the network services that are running on the host via the loopback network interface using the loopback interface bypasses any local network interface hardware",
+    "a pyramid is a structure whose outer surfaces are triangular and converge to a single step at the top making the shape roughly a pyramid in the geometric sense The base of a pyramid can be trilateral quadrilateral or of any polygon shape As such a pyramid has at least three outer triangular surfaces",
     "into she after know possible life part another when might this still at it before also down system from there home interest a also before old other plan what change move at consider set so home such over she turn any here to know present come before a pyramid has at least three outer triangular",
     "english last all hold world own when but school leave last hand number person early make first way around take a school become public after not well then it into know person last about never fact same and a just many how way order want long bypasses any local network interface",
     "over there consider call if group both to it fact could only life mean how do give from he man plan small off there day good develop before eye keep so even who head increase develop home find by most last present as think tell this first capable of total reusability of total palace words taken here",
@@ -21,6 +21,10 @@ para = [
 var username = ""
 var startGame = false ;
 var Music = document.getElementById("music")
+var Music2 = document.getElementById("music2")
+
+
+
 do{
 
     username = prompt("Enter your name : ")
@@ -49,7 +53,7 @@ var actualWords = 0
 startTimer = true ;
 
 
- startGame = confirm("Are you ready ?") ;
+ startGame = confirm("Are you ready ?  (START TYPING TO BEGIN :") ;
 
 
 
