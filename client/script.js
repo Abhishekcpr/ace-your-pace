@@ -235,7 +235,7 @@ function timer()
             if(details[i].clientId == giveId)
             {
                 $('#rank').html( i + 1+ '')  
-               
+                $('#num').html(details.length)
                 // document.getElementById("A"+i+1).style.width = `${details[i].words*2}%`
             }
             
